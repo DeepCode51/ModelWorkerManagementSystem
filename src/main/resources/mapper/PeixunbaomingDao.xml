@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.PeixunbaomingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.PeixunbaomingEntity" id="peixunbaomingMap">
+        <result property="peixunbiaoti" column="peixunbiaoti"/>
+        <result property="leixing" column="leixing"/>
+        <result property="peixunshijian" column="peixunshijian"/>
+        <result property="peixundidian" column="peixundidian"/>
+        <result property="shoukejiangshi" column="shoukejiangshi"/>
+        <result property="baomingriqi" column="baomingriqi"/>
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="jiaoshixingming" column="jiaoshixingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.PeixunbaomingVO" >
+		SELECT * FROM peixunbaoming  peixunbaoming         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.PeixunbaomingVO" >
+		SELECT  peixunbaoming.* FROM peixunbaoming  peixunbaoming 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.PeixunbaomingView" >
+
+		SELECT  peixunbaoming.* FROM peixunbaoming  peixunbaoming 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.PeixunbaomingView" >
+		SELECT * FROM peixunbaoming  peixunbaoming <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>

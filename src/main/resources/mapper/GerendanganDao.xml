@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GerendanganDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GerendanganEntity" id="gerendanganMap">
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="jiaoshixingming" column="jiaoshixingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="jiatingzhuzhi" column="jiatingzhuzhi"/>
+        <result property="zuigaoxueli" column="zuigaoxueli"/>
+        <result property="zhengzhimianmao" column="zhengzhimianmao"/>
+        <result property="canjiadangpaishijian" column="canjiadangpaishijian"/>
+        <result property="hunyuqingkuang" column="hunyuqingkuang"/>
+        <result property="canjiagongzuoshijian" column="canjiagongzuoshijian"/>
+        <result property="benxiaorenzhishijian" column="benxiaorenzhishijian"/>
+        <result property="zhicheng" column="zhicheng"/>
+        <result property="gangwei" column="gangwei"/>
+        <result property="xinji" column="xinji"/>
+        <result property="dangancailiao" column="dangancailiao"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GerendanganVO" >
+		SELECT * FROM gerendangan  gerendangan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GerendanganVO" >
+		SELECT  gerendangan.* FROM gerendangan  gerendangan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GerendanganView" >
+
+		SELECT  gerendangan.* FROM gerendangan  gerendangan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GerendanganView" >
+		SELECT * FROM gerendangan  gerendangan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
